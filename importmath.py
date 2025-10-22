@@ -1,12 +1,12 @@
 import random
-ramdom_number= random.randint(0,100)
-user_number=int(input("enter your number: "))
+ramdom_number= random.randint(0,20)
+user_number=int(input("sayı gir: "))
 if type(user_number)== int:
     while user_number!=ramdom_number:
         if user_number>ramdom_number:
-            print("your number is too high")
+            print("sayın çok büyük")
         else:
-            print("your number is too small")
-        user_number=int(input("enter your number: "))
+            print("sayın çok küçük")
+        user_number=int(input("sayını gir: "))
 else:
-    print("enter a valid number")
+    print("geçerli bi sayı gir")
