@@ -1,0 +1,10 @@
+nums_str=str(input("give us five numbers separated by commas: "))
+print(nums_str)
+numbers_str=nums_str.split(",")
+print(numbers_str)
+numbers_int=[int(num) for num in numbers_str]
+print("The total number of elements is:", len(numbers_int))
+print("The sum of these numbers is:", sum(numbers_int))
+print("The average of these numbers is:", round(sum(numbers_int)/len(numbers_int),2))
+print("the first number is:", numbers_int[0])
+print("the last number is:", numbers_int[-1])
