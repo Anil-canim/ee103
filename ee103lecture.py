@@ -1,29 +1,241 @@
-# def split_tuple(input_tuple):
-#    even_tuple = ()
-#    odd_tuple = ()   
-#    for i in range(len(input_tuple)):
-#        if i%2==0:
-#            even_tuple += (input_tuple[i],)
-#        else:    
-#            odd_tuple += (input_tuple[i],)
-#     return (even_tuple, odd_tuple)
+#########################
+## EXAMPLE: combinations of print and return
+#########################
+# def is_even_with_return( i ):
+#     """ 
+#     Input: i, a positive int
+#     Returns True if i is even, otherwise False
+#     """
+#     print('with return')
+#     remainder = i % 2
+#     return remainder == 0
 
-def build_tuple(strat,stop,inrement)
-    range_input = range(strat, stop, inrement)
-    return tuple(range_input)
+# #is_even_with_return(3)          # -> False
+# #print(is_even_with_return(3))  # -> print(False)
 
-def split_tuple(input_tuple):
-   lwngth_of_tuple = len(input_tuple)
-   odd_tuple= build_tuple(1, lwngth_of_tuple, 2)
-   even_tuple= build_tuple(0, lwngth_of_tuple, 2)
-   return (even_tuple, odd_tuple)
+# def is_even_without_return( i ):
+#     """ 
+#     Input: i, a positive int
+#     Returns None
+#     """
+#     print('without return')
+#     remainder = i % 2
+#     has_rem = (remainder == 0)
+#     print(has_rem)
+#     ##return None
+
+# #is_even_without_return(3)          # -> None
+# #print(is_even_without_return(3))  # -> print(None)
 
 
 
+# ############### YOU TRY IT #######################
+# # What does this print to the console? 
+# # Think first, then run it. 
+# def add(x,y):
+#     return x+y
+# def mult(x,y):
+#     print(x*y)
+
+# # add(1,2)
+# # print(add(2,3))
+# # mult(3,4)
+# # print(mult(4,5))
+
+# ##################################################
+
+# ############ YOU TRY IT ####################
+# # Fix this buggy code so it works according to the specification:
+# def is_triangular(n):
+#     """ n is an int > 0 
+#         Returns True if n is triangular, i.e. equals a continued
+#         summation of natural numbers (1+2+3+...+k) 
+#     """
+#     total = 0
+#     for i in range(n):
+#         total += i
+#         if total == n:
+#             print(True)
+#     print(False)
+
+# # # start by runing it on simple test cases
+# # print(is_triangular(4))  # print False
+# # print(is_triangular(6))  # print True
+# # print(is_triangular(1))  # print True
+
+# ##############################################
 
 
 
+# #########################
+# ### EXAMPLE: bisection square root as a function
+# #########################
+# def bisection_root(x):
+#     epsilon = 0.01
+#     low = 0
+#     high = x
+#     ans = (high + low)/2.0
+#     while abs(ans**2 - x) >= epsilon:
+#         if ans**2 < x: 
+#             low = ans
+#         else: 
+#             high = ans
+#         ans = (high + low)/2.0
+# #    print(ans, 'is close to the root of', x)
+#     return ans
 
+# # print(bisection_root(4))
+# # print(bisection_root(123))
+
+
+# ###################### YOU TRY IT ######################
+# def count_nums_with_sqrt_close_to(n, epsilon):
+#     """ n is an int > 2
+#         epsilon is a positive number < 1
+#     Returns how many integers have a square root within epsilon of n """
+#     # your code here
+
+
+# #print(count_nums_with_sqrt_close_to(10, 0.1))
+
+# #############################################################
+
+
+
+# #########################
+# ## Scope example: paste this into the Python Tutor
+# ########################
+# def f( x ):
+#     x = x + 1
+#     print('in f(x): x =', x)
+#     return x
+
+# # x = 3
+# # z = f( x )
+
+
+# ###########################
+# #### EXAMPLE: shows accessing variables outside scope
+# ###########################
+# def f(y):
+#     x = 1
+#     x += 1
+#     print(x)
+    
+# # # x = 5
+# # # f(x)
+# # # print(x)
+
+# def g(y):
+#     print(x)
+#     print(x+1)
+    
+# # # x = 5
+# # # g(x)
+# # # print(x)
+
+# def h(y):
+#     x += 1 #leads to an error without line `global x` inside h
+
+# # # x = 5
+# # # h(x)
+# # # print(x)
+
+
+# #############
+# ## EXAMPLE: functions as parameters
+# ## Run it in the Python Tutor if something doesn't make sense
+# ############
+# def calc(op, x, y):
+#     return op(x,y)
+
+# def add(a,b):
+#     return a+b
+
+# def sub(a,b):
+#     return a-b
+
+# def mult(a,b):
+#     return a*b
+    
+# def div(a,b):
+#     if b != 0:
+#         return a/b
+#     print("Denominator was 0.")
+
+# # print(calc(add, 2, 3))
+# # print(calc(div, 2, 0))
+
+# ## trace the scope progression of this code
+# def func_a():
+#     print('inside func_a')
+# def func_b(y):
+#     print('inside func_b')
+#     return y
+# def func_c(f, z):
+#     print('inside func_c')
+#     return f(z)
+
+# # print(func_a())
+# # print(5 + func_b(2))
+# # print(func_c(func_b, 3))
+
+
+# ############## YOU TRY IT ###############
+# def apply(criteria,n):
+#     """ criteria is a function that takes in a number and returns a Boolean
+#         n is an int
+#     Returns how many ints from 0 to n (inclusive) match the criteria 
+#     (i.e. return True when criteria is applied to them)
+#     """ 
+#     # your code here
+
+
+# def is_even(x):
+#     return x%2==0
+
+# how_many = apply(is_even,10)
+# # print(how_many)
+
+
+
+# ############## YOU TRY IT ###############
+# # Write a function that takes in an int and two functions as 
+# # parameters (each takes in an int and returns a float). 
+# # It applies both functions to numbers between 0 and n (inclusive) 
+# # and returns the maximum value of all outcomes. 
+
+# def max_of_both(n, f1, f2):
+#     """ n is an int
+#         f1 and f2 are functions that take in an int and return a float
+#     Applies f1 and f2 on all numbers between 0 and n (inclusive). 
+#     Returns the maximum value of all these results.
+#     """
+#     # your code here
+
+# # print(max_of_both(2, lambda x:x-1, lambda x:x+1))  # prints 3
+# # print(max_of_both(10, lambda x:x*2, lambda x:x/2))  # prints 20
+
+
+# ################################
+
+
+
+# ###################################
+# ############# ANSWERS TO YOU TRY IT #######################
+# ###################################
+
+# def how_many_sqrt_close_to(n, epsilon):
+#     """ n is an int > 0
+#         epsilon is a number
+#     Returns how many integers have a square root within epsilon of n """
+#     count = 0
+#     for i in range(n**3):
+#         if n-epsilon < bisection_root(i) < n+epsilon:
+#             count += 1
+#     return count
+
+# # print(how_many_sqrt_close_to(10, 0.1))
 
 
 # def apply(criteria,n):
@@ -32,6 +244,7 @@ def split_tuple(input_tuple):
 #     Returns how many ints from 0 to n (inclusive) match the criteria 
 #     (i.e. return True when criteria is applied to them)
 #     """ 
+#     pass
 #     count = 0
 #     for i in range(0, n+1):
 #         if criteria(i):
@@ -40,253 +253,118 @@ def split_tuple(input_tuple):
 
 # def is_even(x):
 #     return x%2==0
+# # what = apply(is_even,10)
+# # print(what)
 
-# def is_5(x):
-#     return x==5
-
-# # print('apply with is_5:',apply(is_5,10))
-# # print('apply with anon fcn:', apply(lambda x: x==5, 100))
-
-
-# # Shown another way, the following are equivalent:
-# # is_even(8)              # returns True
-# # (lambda x: x%2==0)(8)   # returns True
-
-
-# # 1. What does this print?
-# # print(apply(lambda x: x%2==0, 10))
-
-# # 2. Call apply on n=100 and a lambda func 
-# #    that takes in a parameter and returns 
-# #    whether the parameter is a multiple of 10
-# #    What does it print?
-# # your code here
-
-
-# def do_twice(n, fn):
-#     return fn(fn(n))
-
-# # print(do_twice(3, lambda x: x**2))
-
-
-# ###################
-# ### example with returning a tuple with many values
-# ###################
-# def quotient_and_remainder(x, y):
-#       q = x // y
-#       r = x % y
-#       return (q, r)
-
-# # result = quotient_and_remainder(10,3)
-# # print(result)
-
-# # (quot, rem) = quotient_and_remainder(5,2)
-# # print('quotient is:', quot)
-# # print('remainder is:', rem)
+# # print(apply(lambda x: x==5, 100))
 
 
 
-# ############### YOU TRY IT #####################
-# # Write a function that meets these specifications:
-# def char_counts(s):
-#     """ s is a string of lowercase chars 
-#     Returns a tuple where the first value is the 
-#     number of vowels in s and the second value 
-#     is the number of consonants in s 
-#     """
+
+# ###################################
+# ############# AT HOME #######################
+# ###################################
+
+# def is_palindrome(s):
+#     """ s is a string
+#     Returns True if s is a palnidrome and False otherwise. 
+#     A palindrome is a string that contains the same 
+#     sequence of characters forward and backward """
+#     # your code here
+
+# # For example:
+# # print(is_palindrome("222"))   # prints True
+# # print(is_palindrome("2222"))   # prints True
+# # print(is_palindrome("abc"))   # prints False
+
+
+# def f_yields_palindrome(n, f):
+#     """ n is a positive int
+#         f is a function that takes in an int and returns an int
+#     Returns True if applying f on n returns a number that is a
+#     palindrome and False otherwise.  """
 #     # your code here
 
 
-# # print(char_counts("abcd"))  # prints (1,3)
-# # print(char_counts("zcght"))  # prints (0,5)
+# # For example:
+# def f(x):
+#     return x+1
 
-# ##################################################
+# def g(x):
+#     return x*2
 
+# def h(x):
+#     return x//2
 
-# ###################
-# ### example of variable number of arguments
-# ###################
-# def mean(*args):
-#     """
-#     Assumes at least one argument and all arguments are numbers. 
-#     Returns the mean of the arguments.
-#     """
-#     tot = 0
-#     for a in args:
-#         tot += a
-#     return tot/len(args)
-
-# # print(mean(1,2,3,4,5,6))
-# # print(mean(6,0,9))
-
-# ## Compare above code with this one:
-# # Note args vs *args and mean((6,0,9)) vs mean(6,0,9)
-# def mean(args):
-#     tot = 0
-#     for a in args:
-#         tot += a
-#     return tot/len(args)
-
-# # print(mean((1,2,3,4,5,6)))
-# # print(mean((6,0,9)))
-
-# ##################
-# ## EXAMPLE: sum element values in a list 
-# ##################
-# def list_sum(L):
-#     total = 0 
-#     for e in L: 
-#         total += e 
-#     return(total)
-
-# # print(list_sum([1,3,5]))
-
-
-# ###################
-# ## EXAMPLE: sum lengths of string elements
-# ####################
-# def len_sum(L):
-#     total = 0 
-#     for s in L: 
-#         total += len(s) 
-#     return(total)
-
-# # print(len_sum(['ab', 'def', 'g']))
-
-
-# #################################################
-
-
-
-# ################## YOU TRY IT ###################
-# def sum_and_prod(L):
-#     """ L is a list of numbers 
-#     Return a tuple where the first value is the 
-#     sum of all elements in L and the second value 
-#     is the product of all elements in L 
-#     """
-#     # your code here
-
- 
-
-# # print(sum_and_prod([4,6,2,5]))   # prints (17, 240)
-
-
-
-
-
-# #############################################
-# ################## ANSWERS TO YOU TRY IT ####################
-# #############################################
-# def char_counts(s):
-#     """ s is a string of lowercase chars 
-#     Returns a tuple where the first value is the 
-#     number of vowels in s and the second value 
-#     is the number of consonants in s 
-#     """
-#     vowels, cons = 0, 0
-#     for i in s:
-#         if i in "aeiou":
-#             vowels += 1
-#         else:
-#             cons += 1
-#     return (vowels, cons)
-
-# # print(char_counts("abcd"))  # prints (1,3)
-# # print(char_counts("zcght"))  # prints (0,5)
-
-
-# def sum_and_prod(L):
-#     """ L is a list of numbers 
-#     Return a tuple where the first value is the 
-#     sum of all elements in L and the second value 
-#     is the product of all elements in L 
-#     """
-#     s, p = 0, 1
+# # print(f_yields_palindrome(2, f))   # prints True
+# # print(f_yields_palindrome(76, f))   # prints True
+# # print(f_yields_palindrome(11, g))   # prints True
+# # print(f_yields_palindrome(123, h))   # prints False
     
-#     for i in L:
-#       s += i
-#       p *= i
-#     return (s, p)
-
-# # print(sum_and_prod([1,2,3,4]))   # prints (10, 24)
-# # print(sum_and_prod([12,6,2,7]))   # prints (27, 1008)
-
-
-# #############################################
-# ################## AT HOME ####################
-# #############################################
-
-# # Trace this code:
-# # Figure out what it returns and then run it to check yourself.
-# def always_sunny(t1, t2):
-#     """ t1, t2 are non-empty """
-#     sun = ("sunny", "sun")
-#     first = t1[0] + t2[0]
-#     return (sun[0], first)
-
-# # always_sunny(('cloudy' ), ('cold',))  # returns what?
+# ###################################
+# ##################################
+# ###################################
 
 
 
-# def max_of_both(n, f1, f2):
-#     """ n is an int
-#         f1 and f2 are functions that take in an int and return a float
-#     Applies f1 and f2 on all numbers between 0 and n (inclusive). 
-#     Returns the maximum value of all these results.
-#     """
+# ###################################
+# ############# ANSWERS TO AT HOME ##################
+# ###################################
+# def is_palindrome(s):
+#     """ s is a string
+#     Returns True if s is a palindrome and False otherwise. 
+#     A palindrome is a string that contains the same 
+#     sequence of characters forward and backward """
 #     # your code here
+#     for i in range(len(s)):
+#         if s[i] != s[len(s)-i-1]:
+#             # returning here essentially breaks the loop
+#             # as soon as we find an inconsistency
+#             return False
+#     return True
 
-# # print(max_of_both(2, lambda x:x-1, lambda x:x+1))  # prints 3
-# # print(max_of_both(10, lambda x:x*2, lambda x:x/2))  # prints 20
+# # For example:
+# # print(is_palindrome("222"))   # prints True
+# # print(is_palindrome("2222"))   # prints True
+# # print(is_palindrome("abc"))   # prints False
 
 
-# def sublist_sum(L):
-#     """ L is a list whose elements are lists with int elements
-#     Returns the sum of all int elements. """
+
+# def f_yields_palindrome(n, f):
+#     """ n is a positive int
+#         f is a function that takes in an int and returns an int
+#     Returns True if applying f on n returns a number that is a
+#     palindrome and False otherwise.  """
 #     # your code here
+#     f_on_n = f(n)
+#     return is_palindrome(str(f_on_n))
 
-# # print(sublist_sum([[1,2], [4,5,6]])) # prints 18
+# # For example:
+# def f(x):
+#     return x+1
 
+# def g(x):
+#     return x*2
 
-# #############################################
-# ################## ANSWERS TO AT HOME ####################
-# #############################################
+# def h(x):
+#     return x//2
 
-# def max_of_both(n, f1, f2):
-#     """ n is an int
-#         f1 and f2 are functions that take in an int and return a float
-#     Applies f1 and f2 on all numbers between 0 and n (inclusive). 
-#     Returns the maximum value of all these results.
-#     """
-#     # your code here
-#     maxval = f1(0)
-#     for i in range(n+1):
-#         if f1(i) > maxval:
-#             maxval = f1(i)
-#         if f2(i) > maxval:
-#             maxval = f2(i)
-#     return maxval
-
-# # print(max_of_both(2, lambda x:x-1, lambda x:x+1))  # prints 3
-# # print(max_of_both(10, lambda x:x*2, lambda x:x/2))  # prints 20
+# # print(f_yields_palindrome(2, f))   # prints True
+# # print(f_yields_palindrome(76, f))   # prints True
+# # print(f_yields_palindrome(11, g))   # prints True
+# # print(f_yields_palindrome(123, h))   # prints False
 
 
-# def sublist_sum(L):
-#     """ L is a list whose elements are lists with int elements
-#     Returns the sum of all int elements. """
-#     ## One way by using the sum function over the sublist
-#     tot = 0
-#     for subL in L:
-#         tot += sum(subL)
-#     return tot
-#     ## Alternate way by nesting a for loop that 
-#     ## iterates over the sublist's int elements
-#     tot = 0
-#     for subL in L:
-#         for e in subL:
-#             tot += e
-#     return tot
+# ###################################
+# ##################################
+# ###################################
+def mult(a,b):
+    return (a*b)
+
+def sum(a,b):
+    return (a+b)
+
+def print_result(func, x, y):
+    result = func(x,y)
+    print("The result is:", result)
     
-
-# # print(sublist_sum([[1,2], [4,5,6]])) # prints 18
