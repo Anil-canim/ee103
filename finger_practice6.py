@@ -21,4 +21,3 @@ while ans<N or ans>N:
     ans=(high+low)/2
     print(ans)
 print("guess count is: ", guess)
-
