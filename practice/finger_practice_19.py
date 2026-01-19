@@ -40,4 +40,5 @@ class Stack(Container):
     """
             if self.size() > 0:
                 last_elem=self.myList.pop(-1)
+                last_elem *= 5
                 return last_elem
